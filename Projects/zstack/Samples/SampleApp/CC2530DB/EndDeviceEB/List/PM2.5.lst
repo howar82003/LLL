@@ -1,0 +1,264 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             25/Aug/2015  14:52:41 #
+# Copyright 2004-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#                                                                             #
+#    Source file        =  D:\desk\cc2530\ch5\3 new task perfect              #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\Source\1stTest\PM2.5.c                         #
+#    Command line       =  -f "D:\desk\cc2530\ch5\3 new task perfect          #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg" #
+#                           (-DCPU32MHZ -DROOT=__near_func                    #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "D:\desk\cc2530\ch5\3 new   #
+#                          task perfect ROOM1\ZStack-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\Tools\CC2530DB\ #
+#                          f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=0             #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFF1                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "D:\desk\cc2530\ch5\3 new   #
+#                          task perfect ROOM1\ZStack-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\Source\1stTest\PM2.5.c" -D        #
+#                          NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D            #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG  #
+#                          -lC "D:\desk\cc2530\ch5\3 new task perfect         #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\EndDeviceEB\List\" -lA                #
+#                          "D:\desk\cc2530\ch5\3 new task perfect             #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\EndDeviceEB\List\" --diag_suppress    #
+#                          Pe001,Pa010 -o "D:\desk\cc2530\ch5\3 new task      #
+#                          perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\EndDeviceEB\Obj\" -e          #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "D:\desk\cc2530\ch5\3 new task perfect          #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\" -I "D:\desk\cc2530\ch5\3 new task   #
+#                          perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\..\Source\" -I                #
+#                          "D:\desk\cc2530\ch5\3 new task perfect             #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\ZMain\TI2530DB\" -I          #
+#                          "D:\desk\cc2530\ch5\3 new task perfect             #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\hal\include #
+#                          \" -I "D:\desk\cc2530\ch5\3 new task perfect       #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\hal\target\ #
+#                          CC2530EB\" -I "D:\desk\cc2530\ch5\3 new task       #
+#                          perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\..\..\..\..\..\Components\mac #
+#                          \include\" -I "D:\desk\cc2530\ch5\3 new task       #
+#                          perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\..\..\..\..\..\Components\mac #
+#                          \high_level\" -I "D:\desk\cc2530\ch5\3 new task    #
+#                          perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\..\..\..\..\..\Components\mac #
+#                          \low_level\srf04\" -I "D:\desk\cc2530\ch5\3 new    #
+#                          task perfect ROOM1\ZStack-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\Component #
+#                          s\mac\low_level\srf04\single_chip\" -I             #
+#                          "D:\desk\cc2530\ch5\3 new task perfect             #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\mt\" -I     #
+#                          "D:\desk\cc2530\ch5\3 new task perfect             #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\osal\includ #
+#                          e\" -I "D:\desk\cc2530\ch5\3 new task perfect      #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\services\sa #
+#                          ddr\" -I "D:\desk\cc2530\ch5\3 new task perfect    #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\services\sd #
+#                          ata\" -I "D:\desk\cc2530\ch5\3 new task perfect    #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\stack\af\"  #
+#                          -I "D:\desk\cc2530\ch5\3 new task perfect          #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\stack\nwk\" #
+#                           -I "D:\desk\cc2530\ch5\3 new task perfect         #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\stack\sapi\ #
+#                          " -I "D:\desk\cc2530\ch5\3 new task perfect        #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\stack\sec\" #
+#                           -I "D:\desk\cc2530\ch5\3 new task perfect         #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\stack\sys\" #
+#                           -I "D:\desk\cc2530\ch5\3 new task perfect         #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\stack\zdo\" #
+#                           -I "D:\desk\cc2530\ch5\3 new task perfect         #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\zmac\" -I   #
+#                          "D:\desk\cc2530\ch5\3 new task perfect             #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"  #
+#                          -Ohz                                               #
+#    List file          =  D:\desk\cc2530\ch5\3 new task perfect              #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\EndDeviceEB\List\PM2.5.lst            #
+#    Object file        =  D:\desk\cc2530\ch5\3 new task perfect              #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\EndDeviceEB\Obj\PM2.5.r51             #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\desk\cc2530\ch5\3 new task perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\1stTest\PM2.5.c
+      1          #include <iocc2530.h>
+      2          #include "Sensor.h"
+
+    wendu_shi = wendu /100;
+                ^
+"D:\desk\cc2530\ch5\3 new task perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\1stTest\Sensor.h",36  Error[Pe020]: 
+          identifier "wendu" is undefined
+
+    shidu_shi = shidu /100;
+                ^
+"D:\desk\cc2530\ch5\3 new task perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\1stTest\Sensor.h",40  Error[Pe020]: 
+          identifier "shidu" is undefined
+
+          wendu = ucharT_data_H*256 + ucharT_data_L;
+          ^
+"D:\desk\cc2530\ch5\3 new task perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\1stTest\Sensor.h",125  Error[Pe020]: 
+          identifier "wendu" is undefined
+
+          shidu = ucharRH_data_H*256 + ucharRH_data_L;
+          ^
+"D:\desk\cc2530\ch5\3 new task perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\1stTest\Sensor.h",126  Error[Pe020]: 
+          identifier "shidu" is undefined
+
+    wenduTemp[DHT22_num] = wendu;
+    ^
+"D:\desk\cc2530\ch5\3 new task perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\1stTest\Sensor.h",134  Error[Pe020]: 
+          identifier "wenduTemp" is undefined
+
+    wenduTemp[DHT22_num] = wendu;
+                           ^
+"D:\desk\cc2530\ch5\3 new task perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\1stTest\Sensor.h",134  Error[Pe020]: 
+          identifier "wendu" is undefined
+
+    shiduTemp[DHT22_num] = shidu;
+    ^
+"D:\desk\cc2530\ch5\3 new task perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\1stTest\Sensor.h",135  Error[Pe020]: 
+          identifier "shiduTemp" is undefined
+
+    shiduTemp[DHT22_num] = shidu;
+                           ^
+"D:\desk\cc2530\ch5\3 new task perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\1stTest\Sensor.h",135  Error[Pe020]: 
+          identifier "shidu" is undefined
+
+    return wendu;
+           ^
+"D:\desk\cc2530\ch5\3 new task perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\1stTest\Sensor.h",147  Error[Pe020]: 
+          identifier "wendu" is undefined
+      3          #include "UART.H"
+      4          extern void delay_25us(void);
+      5          extern void SendData(unsigned int i, unsigned char Data);
+      6          
+      7          unsigned int Temp_PM25[10] = {0};
+      8          
+      9          void Init_PM25(void)
+     10          {
+     11            P0DIR &= ~0x20;                   //P0_5-->Inp
+     12            P1DIR |= 0x02;                    //P1_1-->Output
+     13            ADCCFG |= 0x20;                   //Set P0_5 Analog Periferal I/O
+     14          }
+     15          void background_PM25_ADC(void)
+     16          {
+     17            unsigned int  value = 0, MSD = 0, LSD = 0;
+     18            static int i = 0;
+     19            
+     20            ADCCON1 = 0x33;
+     21            ADCCON3 = 0x00;
+     22            
+     23            ADCCON1 |= 0x30;                  //Start a conversion sequence if ADCCON1.STSEL = 11 and no sequence is running.
+     24                                              
+     25            ADCCON3 |= 0x80;                  //AVDD5 pin
+     26            ADCCON3 |= 0x30;                  //512 decimation rate (12 bits ENOB)
+     27            ADCCON3 |= 0x05;                  //AIN5
+     28                             
+     29            ADCCON1 |= 0x40;                  //Start conversion
+     30            while(!(ADCCON1 & 0x80));        
+     31          
+     32            LSD = ADCL;
+     33            LSD = LSD >>4;
+     34            MSD = ADCH;
+     35            MSD = MSD <<4;
+     36            value = LSD + MSD;                
+     37            
+     38            Temp_PM25[i++] = value;
+     39            if(i == 10)i=0;
+     40          }
+     41          void background_PM25(void)
+     42          {
+     43            char i = 0;
+     44            P1_1 = 1;
+     45            while(i++ <14)delay_25us();
+     46            background_PM25_ADC();
+     47            P1_1 = 0;
+     48          }
+     49          void Read_PM25(void)
+     50          {
+     51            unsigned char i ,PM25uchar[21] = "Dust Density:   ug/m3",
+     52                          UnderThreshold[31] = "Dust Density is under threshold";
+     53            unsigned int Sum = 0;
+     54            float X = 0;
+     55            
+     56            for(i = 0; i <10; i++)
+     57              Sum = Temp_PM25[i] + Sum;
+     58            Sum = Sum /10;
+     59            if(Sum < 435)
+     60              UartSendString(UnderThreshold, 31);
+     61            else
+     62            {
+     63            X = (float)Sum*33/2048;                 //x10
+     64            X = (X-7)/56*1000;                      //change the unit(mg/m3) to um/m3
+     65            
+     66            PM25uchar[13] = (int)X/100 +0x30;
+     67            PM25uchar[14] = (int)X/10%10 +0x30;
+     68            PM25uchar[15] = (int)X%10 +0x30;
+     69            
+     70            SendData(7,PM25uchar[13]);
+     71            SendData(8,PM25uchar[14]);
+     72            SendData(9,PM25uchar[15]);
+     73            /*
+     74            UartSendString(PM25uchar, 21);*/
+     75            }
+     76          }
+     77            
+
+Errors: 9
+Warnings: none

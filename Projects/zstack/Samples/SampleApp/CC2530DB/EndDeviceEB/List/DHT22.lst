@@ -1,0 +1,366 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             25/Aug/2015  14:52:41 #
+# Copyright 2004-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#                                                                             #
+#    Source file        =  D:\desk\cc2530\ch5\3 new task perfect              #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\Source\1stTest\DHT22.C                         #
+#    Command line       =  -f "D:\desk\cc2530\ch5\3 new task perfect          #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg" #
+#                           (-DCPU32MHZ -DROOT=__near_func                    #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "D:\desk\cc2530\ch5\3 new   #
+#                          task perfect ROOM1\ZStack-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\Tools\CC2530DB\ #
+#                          f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=0             #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFF1                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "D:\desk\cc2530\ch5\3 new   #
+#                          task perfect ROOM1\ZStack-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\Source\1stTest\DHT22.C" -D        #
+#                          NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D            #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG  #
+#                          -lC "D:\desk\cc2530\ch5\3 new task perfect         #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\EndDeviceEB\List\" -lA                #
+#                          "D:\desk\cc2530\ch5\3 new task perfect             #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\EndDeviceEB\List\" --diag_suppress    #
+#                          Pe001,Pa010 -o "D:\desk\cc2530\ch5\3 new task      #
+#                          perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\EndDeviceEB\Obj\" -e          #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "D:\desk\cc2530\ch5\3 new task perfect          #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\" -I "D:\desk\cc2530\ch5\3 new task   #
+#                          perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\..\Source\" -I                #
+#                          "D:\desk\cc2530\ch5\3 new task perfect             #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\ZMain\TI2530DB\" -I          #
+#                          "D:\desk\cc2530\ch5\3 new task perfect             #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\hal\include #
+#                          \" -I "D:\desk\cc2530\ch5\3 new task perfect       #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\hal\target\ #
+#                          CC2530EB\" -I "D:\desk\cc2530\ch5\3 new task       #
+#                          perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\..\..\..\..\..\Components\mac #
+#                          \include\" -I "D:\desk\cc2530\ch5\3 new task       #
+#                          perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\..\..\..\..\..\Components\mac #
+#                          \high_level\" -I "D:\desk\cc2530\ch5\3 new task    #
+#                          perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\..\..\..\..\..\Components\mac #
+#                          \low_level\srf04\" -I "D:\desk\cc2530\ch5\3 new    #
+#                          task perfect ROOM1\ZStack-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\Component #
+#                          s\mac\low_level\srf04\single_chip\" -I             #
+#                          "D:\desk\cc2530\ch5\3 new task perfect             #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\mt\" -I     #
+#                          "D:\desk\cc2530\ch5\3 new task perfect             #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\osal\includ #
+#                          e\" -I "D:\desk\cc2530\ch5\3 new task perfect      #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\services\sa #
+#                          ddr\" -I "D:\desk\cc2530\ch5\3 new task perfect    #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\services\sd #
+#                          ata\" -I "D:\desk\cc2530\ch5\3 new task perfect    #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\stack\af\"  #
+#                          -I "D:\desk\cc2530\ch5\3 new task perfect          #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\stack\nwk\" #
+#                           -I "D:\desk\cc2530\ch5\3 new task perfect         #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\stack\sapi\ #
+#                          " -I "D:\desk\cc2530\ch5\3 new task perfect        #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\stack\sec\" #
+#                           -I "D:\desk\cc2530\ch5\3 new task perfect         #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\stack\sys\" #
+#                           -I "D:\desk\cc2530\ch5\3 new task perfect         #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\stack\zdo\" #
+#                           -I "D:\desk\cc2530\ch5\3 new task perfect         #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\zmac\" -I   #
+#                          "D:\desk\cc2530\ch5\3 new task perfect             #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"  #
+#                          -Ohz                                               #
+#    List file          =  D:\desk\cc2530\ch5\3 new task perfect              #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\EndDeviceEB\List\DHT22.lst            #
+#    Object file        =  D:\desk\cc2530\ch5\3 new task perfect              #
+#                          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\EndDeviceEB\Obj\DHT22.r51             #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\desk\cc2530\ch5\3 new task perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\1stTest\DHT22.C
+      1          #include <ioCC2530.h>
+      2          #include "UART.H"
+      3          #include "DHT22.H"
+      4          #include "Sensor.h"
+
+    wendu_shi = wendu /100;
+                ^
+"D:\desk\cc2530\ch5\3 new task perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\1stTest\Sensor.h",36  Error[Pe020]: 
+          identifier "wendu" is undefined
+
+    shidu_shi = shidu /100;
+                ^
+"D:\desk\cc2530\ch5\3 new task perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\1stTest\Sensor.h",40  Error[Pe020]: 
+          identifier "shidu" is undefined
+
+          wendu = ucharT_data_H*256 + ucharT_data_L;
+          ^
+"D:\desk\cc2530\ch5\3 new task perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\1stTest\Sensor.h",125  Error[Pe020]: 
+          identifier "wendu" is undefined
+
+          shidu = ucharRH_data_H*256 + ucharRH_data_L;
+          ^
+"D:\desk\cc2530\ch5\3 new task perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\1stTest\Sensor.h",126  Error[Pe020]: 
+          identifier "shidu" is undefined
+
+    wenduTemp[DHT22_num] = wendu;
+    ^
+"D:\desk\cc2530\ch5\3 new task perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\1stTest\Sensor.h",134  Error[Pe020]: 
+          identifier "wenduTemp" is undefined
+
+    wenduTemp[DHT22_num] = wendu;
+                           ^
+"D:\desk\cc2530\ch5\3 new task perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\1stTest\Sensor.h",134  Error[Pe020]: 
+          identifier "wendu" is undefined
+
+    shiduTemp[DHT22_num] = shidu;
+    ^
+"D:\desk\cc2530\ch5\3 new task perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\1stTest\Sensor.h",135  Error[Pe020]: 
+          identifier "shiduTemp" is undefined
+
+    shiduTemp[DHT22_num] = shidu;
+                           ^
+"D:\desk\cc2530\ch5\3 new task perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\1stTest\Sensor.h",135  Error[Pe020]: 
+          identifier "shidu" is undefined
+
+    return wendu;
+           ^
+"D:\desk\cc2530\ch5\3 new task perfect ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\1stTest\Sensor.h",147  Error[Pe020]: 
+          identifier "wendu" is undefined
+      5          #define DATA_PIN P0_1
+      6          
+      7          extern void delay_25us(void);
+      8          extern void SendData(unsigned int i, unsigned char Data);
+      9          
+     10          unsigned int wendu = 0, shidu = 0;
+     11          int shiduTemp[10] = {0}, wenduTemp[10] = {0};
+     12          
+     13          
+     14          
+     15          
+     16          
+     17          
+     18          void ReadDHT22(void)
+     19          {
+     20            uchar temp[6]; 
+     21            uchar humidity[5];  
+     22            uchar strTemp[13]="Temperature:";
+                         ^
+Warning[Pe177]: variable "strTemp" was declared but never referenced
+     23            uchar strHumidity[11]="Humidity:";  
+                         ^
+Warning[Pe177]: variable "strHumidity" was declared but never referenced
+     24            uchar str_1[8]="DHT22:";
+                         ^
+Warning[Pe177]: variable "str_1" was declared but never referenced
+     25            
+     26            wendu_shi = wendu /100;
+     27            wendu_ge = wendu /10 %10;
+     28            wendu_dian = wendu %10;
+     29            
+     30            shidu_shi = shidu /100;
+     31            shidu_ge = shidu /10 %10;
+     32            shidu_dian = shidu %10;
+     33            
+     34            temp[0]=wendu_shi+0x30;
+     35            temp[1]=wendu_ge+0x30;
+     36            temp[2]='.';
+     37            temp[3]=wendu_dian+0x30;
+     38            temp[4] = '*';
+     39            temp[5] = 'C';
+     40                  
+     41            SendData(1,temp[0]);
+     42            SendData(2,temp[1]);
+     43            SendData(3,temp[3]);
+     44            
+     45            humidity[0]=shidu_shi+0x30;
+     46            humidity[1]=shidu_ge+0x30;
+     47            humidity[2]='.';
+     48            humidity[3]=shidu_dian+0x30;
+     49            humidity[4]='%';
+     50            
+     51            SendData(4,humidity[0]);
+     52            SendData(5,humidity[1]);
+     53            SendData(6,humidity[3]);
+     54            /*
+     55            UartSendString(str_1, 8);
+     56            UartSendString(strTemp, 12);
+     57            UartSendString(temp, 6);
+     58            UartSendString(strHumidity, 9);
+     59            UartSendString(humidity, 5);*/
+     60          }
+     61          
+     62          void COM(void)   
+                      ^
+Error[Pe247]: function "COM" has already been defined (at line 66 of
+          "D:\desk\cc2530\ch5\3 new task perfect
+          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\1stTest\
+          Sensor.h")
+     63          {     
+     64              uchar i;       
+     65              for(i=0;i<8;i++)    
+     66              {
+     67                  ErrFLAG = 2;
+     68                  while(!DATA_PIN && ErrFLAG++);
+     69                  delay_25us();
+     70                  delay_25us();
+     71                  uchartemp=0;
+     72                  if(DATA_PIN)uchartemp=1;
+     73                  ErrFLAG = 2;
+     74                  while(DATA_PIN && ErrFLAG++);   
+     75                  ucharcomdata<<=1;
+     76                  ucharcomdata|=uchartemp; 
+     77              }   
+     78          }
+     79          void DHT22(void)   
+                      ^
+Error[Pe247]: function "DHT22" has already been defined (at line 83 of
+          "D:\desk\cc2530\ch5\3 new task perfect
+          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\1stTest\
+          Sensor.h")
+     80          {
+     81              int x = 0;
+     82              P0DIR |= 0x02;
+     83              DATA_PIN = 0;
+     84              
+     85              for (x = 0;x < 20;x++){delay_25us();}
+     86              
+     87              DATA_PIN = 1; 
+     88              
+     89              P0DIR &= ~0x02; //P0_1-->Inp
+     90          
+     91              delay_25us();
+     92              delay_25us(); 
+     93              
+     94                  ErrFLAG = 2;
+     95                  while(!DATA_PIN && ErrFLAG++);        //80us low
+     96                  ErrFLAG = 2;
+     97                  while(DATA_PIN && ErrFLAG++);         //80us high
+     98                  
+     99                  COM();
+    100                  ucharRH_data_H_temp=ucharcomdata;
+    101                  COM();
+    102                  ucharRH_data_L_temp=ucharcomdata;
+    103                  COM();
+    104                  ucharT_data_H_temp=ucharcomdata;
+    105                  COM();
+    106                  ucharT_data_L_temp=ucharcomdata;
+    107                  COM();
+    108                  ucharcheckdata_temp=ucharcomdata;
+    109                  DATA_PIN = 1; 
+    110                  uchartemp=(ucharT_data_H_temp+ucharT_data_L_temp+ucharRH_data_H_temp+ucharRH_data_L_temp);
+    111                  
+    112                  if(uchartemp==ucharcheckdata_temp)
+    113                  {
+    114                      ucharRH_data_H=ucharRH_data_H_temp;
+    115                      ucharRH_data_L=ucharRH_data_L_temp;
+    116                      ucharT_data_H=ucharT_data_H_temp;
+    117                      ucharT_data_L=ucharT_data_L_temp;
+    118                      ucharcheckdata=ucharcheckdata_temp;
+    119                  }
+    120                  
+    121                  wendu = ucharT_data_H*256 + ucharT_data_L;
+    122                  shidu = ucharRH_data_H*256 + ucharRH_data_L;
+    123                  
+    124              //P0DIR |= 0x02; 
+    125          }
+    126          void DHT22background(int i)
+    127          {
+    128            
+    129            int j = 0;
+    130            DHT22();
+    131            wenduTemp[i] = wendu;
+    132            shiduTemp[i] = shidu;
+    133            
+    134            while(j<10){
+    135              wendu = wendu + wenduTemp[j];
+    136              shidu = shidu + shiduTemp[j];
+    137              j++;
+    138            }
+    139            wendu = wendu/11;
+    140            shidu = shidu/11;
+    141          }
+    142          
+    143          void DHT22_background(void)
+                      ^
+Error[Pe247]: function "DHT22_background" has already been defined (at line
+          130 of "D:\desk\cc2530\ch5\3 new task perfect
+          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\1stTest\
+          Sensor.h")
+    144          {
+    145            static int i = 0;
+    146            if(i == 10)i = 0;
+    147            DHT22background(i++);
+    148          }
+    149          
+    150          unsigned int Shiwen(void)
+                              ^
+Error[Pe247]: function "Shiwen" has already been defined (at line 145 of
+          "D:\desk\cc2530\ch5\3 new task perfect
+          ROOM1\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\1stTest\
+          Sensor.h")
+    151          {
+    152            return wendu;
+    153          }
+
+Errors: 13
+Warnings: 3

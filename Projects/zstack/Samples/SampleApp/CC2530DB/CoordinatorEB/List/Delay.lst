@@ -1,0 +1,243 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             24/Aug/2015  16:26:29 #
+# Copyright 2004-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#                                                                             #
+#    Source file        =  D:\desk\cc2530\ch5\3 new task                      #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\Source\1stTest\Delay.c                       #
+#    Command line       =  -f "D:\desk\cc2530\ch5\3 new task                  #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cf #
+#                          g" (-DCPU32MHZ -DROOT=__near_func                  #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8         #
+#                          -DMAC_CFG_RX_MAX=5 -DZDO_COORDINATOR -DRTR_NWK)    #
+#                          -f "D:\desk\cc2530\ch5\3 new task                  #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.c #
+#                          fg" (-DZIGBEEPRO -DSECURE=0 -DZG_SECURE_DYNAMIC=0  #
+#                          -DREFLECTOR -DDEFAULT_CHANLIST=0x00000800          #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFF1                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "D:\desk\cc2530\ch5\3 new   #
+#                          task perfect\ZStack-2.5.1a\Projects\zstack\Samples #
+#                          \SampleApp\Source\1stTest\Delay.c" -D ZTOOL_P1 -D  #
+#                          xMT_TASK -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D        #
+#                          LCD_SUPPORTED=DEBUG -lC "D:\desk\cc2530\ch5\3 new  #
+#                          task perfect\ZStack-2.5.1a\Projects\zstack\Samples #
+#                          \SampleApp\CC2530DB\CoordinatorEB\List\" -lA       #
+#                          "D:\desk\cc2530\ch5\3 new task                     #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\CoordinatorEB\List\"                #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          "D:\desk\cc2530\ch5\3 new task                     #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\CoordinatorEB\Obj\" -e              #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "D:\desk\cc2530\ch5\3 new task                  #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\" -I "D:\desk\cc2530\ch5\3 new      #
+#                          task perfect\ZStack-2.5.1a\Projects\zstack\Samples #
+#                          \SampleApp\CC2530DB\..\Source\" -I                 #
+#                          "D:\desk\cc2530\ch5\3 new task                     #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\ZMain\TI2530DB\" -I        #
+#                          "D:\desk\cc2530\ch5\3 new task                     #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\hal\inclu #
+#                          de\" -I "D:\desk\cc2530\ch5\3 new task             #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\hal\targe #
+#                          t\CC2530EB\" -I "D:\desk\cc2530\ch5\3 new task     #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\mac\inclu #
+#                          de\" -I "D:\desk\cc2530\ch5\3 new task             #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\mac\high_ #
+#                          level\" -I "D:\desk\cc2530\ch5\3 new task          #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\mac\low_l #
+#                          evel\srf04\" -I "D:\desk\cc2530\ch5\3 new task     #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\mac\low_l #
+#                          evel\srf04\single_chip\" -I "D:\desk\cc2530\ch5\3  #
+#                          new task perfect\ZStack-2.5.1a\Projects\zstack\Sam #
+#                          ples\SampleApp\CC2530DB\..\..\..\..\..\Components\ #
+#                          mt\" -I "D:\desk\cc2530\ch5\3 new task             #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\osal\incl #
+#                          ude\" -I "D:\desk\cc2530\ch5\3 new task            #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\services\ #
+#                          saddr\" -I "D:\desk\cc2530\ch5\3 new task          #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\services\ #
+#                          sdata\" -I "D:\desk\cc2530\ch5\3 new task          #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\stack\af\ #
+#                          " -I "D:\desk\cc2530\ch5\3 new task                #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\stack\nwk #
+#                          \" -I "D:\desk\cc2530\ch5\3 new task               #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\stack\sap #
+#                          i\" -I "D:\desk\cc2530\ch5\3 new task              #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\stack\sec #
+#                          \" -I "D:\desk\cc2530\ch5\3 new task               #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\stack\sys #
+#                          \" -I "D:\desk\cc2530\ch5\3 new task               #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\stack\zdo #
+#                          \" -I "D:\desk\cc2530\ch5\3 new task               #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\zmac\"    #
+#                          -I "D:\desk\cc2530\ch5\3 new task                  #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\zmac\f8w\ #
+#                          " -Ohz --require_prototypes                        #
+#    List file          =  D:\desk\cc2530\ch5\3 new task                      #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\CoordinatorEB\List\Delay.lst        #
+#    Object file        =  D:\desk\cc2530\ch5\3 new task                      #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\CoordinatorEB\Obj\Delay.r51         #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\desk\cc2530\ch5\3 new task perfect\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\1stTest\Delay.c
+      1          #include <ioCC2530.h>
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      2          int T4counter = 0;
+   \                     T4counter:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+      3          /**************************************************************
+      4          Delay function
+      5          **************************************************************/
+      6          void delay_25us(void);
+      7          void delay_Nms(int Nms);
+      8          void timer4_init(void);
+      9          /*************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     10          void delay_25us(void)
+   \                     delay_25us:
+     11          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     12            int i;
+     13            for (i = 0; i < 80; i++)
+   \   000000   7450         MOV     A,#0x50
+     14            {
+     15              asm("NOP");
+   \                     ??delay_25us_0:
+   \   000002   00           NOP
+     16            }
+   \   000003   14           DEC     A
+   \   000004   70FC         JNZ     ??delay_25us_0
+     17          }
+   \   000006   02....       LJMP    ?BRET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     18          void delay_Nms(int Nms)
+   \                     delay_Nms:
+     19          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     20            int i,j;
+     21            for (j = 0; j < Nms; j++)
+   \   000000   7800         MOV     R0,#0x0
+   \   000002   7900         MOV     R1,#0x0
+   \   000004   8008         SJMP    ??delay_Nms_0
+     22              for (i = 0; i<816; i++);
+   \                     ??delay_Nms_1:
+   \   000006   E8           MOV     A,R0
+   \   000007   2401         ADD     A,#0x1
+   \   000009   08           INC     R0
+   \   00000A   E9           MOV     A,R1
+   \   00000B   3400         ADDC    A,#0x0
+   \   00000D   F9           MOV     R1,A
+   \                     ??delay_Nms_0:
+   \   00000E   C3           CLR     C
+   \   00000F   E8           MOV     A,R0
+   \   000010   9A           SUBB    A,R2
+   \   000011   E9           MOV     A,R1
+   \   000012   9B           SUBB    A,R3
+   \   000013   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   000015   65D0         XRL     A,PSW
+   \   000017   33           RLC     A
+   \   000018   40EC         JC      ??delay_Nms_1
+     23          }
+   \   00001A   02....       LJMP    ?BRET
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??delay_25us?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    delay_25us
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??delay_Nms?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    delay_Nms
+
+   Maximum stack usage in bytes:
+
+   ISTACK PSTACK XSTACK Function
+   ------ ------ ------ --------
+       0      0      0  delay_25us
+       0      0      0  delay_Nms
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       6  ??delay_25us?relay
+       6  ??delay_Nms?relay
+       2  T4counter
+       9  delay_25us
+      29  delay_Nms
+
+ 
+ 38 bytes in segment BANKED_CODE
+ 12 bytes in segment BANK_RELAYS
+  2 bytes in segment XDATA_Z
+ 
+ 50 bytes of CODE  memory
+  2 bytes of XDATA memory
+
+Errors: none
+Warnings: none

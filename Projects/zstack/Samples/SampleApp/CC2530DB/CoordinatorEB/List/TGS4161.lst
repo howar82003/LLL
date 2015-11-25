@@ -1,0 +1,963 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             24/Aug/2015  16:26:30 #
+# Copyright 2004-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#                                                                             #
+#    Source file        =  D:\desk\cc2530\ch5\3 new task                      #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\Source\1stTest\TGS4161.c                     #
+#    Command line       =  -f "D:\desk\cc2530\ch5\3 new task                  #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cf #
+#                          g" (-DCPU32MHZ -DROOT=__near_func                  #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8         #
+#                          -DMAC_CFG_RX_MAX=5 -DZDO_COORDINATOR -DRTR_NWK)    #
+#                          -f "D:\desk\cc2530\ch5\3 new task                  #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.c #
+#                          fg" (-DZIGBEEPRO -DSECURE=0 -DZG_SECURE_DYNAMIC=0  #
+#                          -DREFLECTOR -DDEFAULT_CHANLIST=0x00000800          #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFF1                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "D:\desk\cc2530\ch5\3 new   #
+#                          task perfect\ZStack-2.5.1a\Projects\zstack\Samples #
+#                          \SampleApp\Source\1stTest\TGS4161.c" -D ZTOOL_P1   #
+#                          -D xMT_TASK -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D     #
+#                          LCD_SUPPORTED=DEBUG -lC "D:\desk\cc2530\ch5\3 new  #
+#                          task perfect\ZStack-2.5.1a\Projects\zstack\Samples #
+#                          \SampleApp\CC2530DB\CoordinatorEB\List\" -lA       #
+#                          "D:\desk\cc2530\ch5\3 new task                     #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\CoordinatorEB\List\"                #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          "D:\desk\cc2530\ch5\3 new task                     #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\CoordinatorEB\Obj\" -e              #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "D:\desk\cc2530\ch5\3 new task                  #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\" -I "D:\desk\cc2530\ch5\3 new      #
+#                          task perfect\ZStack-2.5.1a\Projects\zstack\Samples #
+#                          \SampleApp\CC2530DB\..\Source\" -I                 #
+#                          "D:\desk\cc2530\ch5\3 new task                     #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\ZMain\TI2530DB\" -I        #
+#                          "D:\desk\cc2530\ch5\3 new task                     #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\hal\inclu #
+#                          de\" -I "D:\desk\cc2530\ch5\3 new task             #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\hal\targe #
+#                          t\CC2530EB\" -I "D:\desk\cc2530\ch5\3 new task     #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\mac\inclu #
+#                          de\" -I "D:\desk\cc2530\ch5\3 new task             #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\mac\high_ #
+#                          level\" -I "D:\desk\cc2530\ch5\3 new task          #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\mac\low_l #
+#                          evel\srf04\" -I "D:\desk\cc2530\ch5\3 new task     #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\mac\low_l #
+#                          evel\srf04\single_chip\" -I "D:\desk\cc2530\ch5\3  #
+#                          new task perfect\ZStack-2.5.1a\Projects\zstack\Sam #
+#                          ples\SampleApp\CC2530DB\..\..\..\..\..\Components\ #
+#                          mt\" -I "D:\desk\cc2530\ch5\3 new task             #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\osal\incl #
+#                          ude\" -I "D:\desk\cc2530\ch5\3 new task            #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\services\ #
+#                          saddr\" -I "D:\desk\cc2530\ch5\3 new task          #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\services\ #
+#                          sdata\" -I "D:\desk\cc2530\ch5\3 new task          #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\stack\af\ #
+#                          " -I "D:\desk\cc2530\ch5\3 new task                #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\stack\nwk #
+#                          \" -I "D:\desk\cc2530\ch5\3 new task               #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\stack\sap #
+#                          i\" -I "D:\desk\cc2530\ch5\3 new task              #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\stack\sec #
+#                          \" -I "D:\desk\cc2530\ch5\3 new task               #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\stack\sys #
+#                          \" -I "D:\desk\cc2530\ch5\3 new task               #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\stack\zdo #
+#                          \" -I "D:\desk\cc2530\ch5\3 new task               #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\zmac\"    #
+#                          -I "D:\desk\cc2530\ch5\3 new task                  #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\zmac\f8w\ #
+#                          " -Ohz --require_prototypes                        #
+#    List file          =  D:\desk\cc2530\ch5\3 new task                      #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\CoordinatorEB\List\TGS4161.lst      #
+#    Object file        =  D:\desk\cc2530\ch5\3 new task                      #
+#                          perfect\ZStack-2.5.1a\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\CoordinatorEB\Obj\TGS4161.r51       #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\desk\cc2530\ch5\3 new task perfect\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\1stTest\TGS4161.c
+      1          #include <iocc2530.h>
+
+   \                                 In  segment SFR_AN, at 0xb4
+   \   unsigned char volatile __sfr ADCCON1
+   \                     ADCCON1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xb6
+   \   unsigned char volatile __sfr ADCCON3
+   \                     ADCCON3:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xba
+   \   unsigned char volatile __sfr ADCL
+   \                     ADCL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xbb
+   \   unsigned char volatile __sfr ADCH
+   \                     ADCH:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf2
+   \   unsigned char volatile __sfr ADCCFG
+   \                     ADCCFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+      2          #include "UART.H"
+      3          #include "math.h"
+      4          #include "Sensor.h"
+      5          
+      6          extern unsigned int Shiwen(void);
+      7          extern void SendData(unsigned int i, unsigned char Data);
+      8          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      9          unsigned int Temp_TGS4161[10] = {0};
+   \                     Temp_TGS4161:
+   \   000000                DS 20
+   \   000014                REQUIRE __INIT_XDATA_Z
+     10          
+     11          /*************************************************************
+     12                            TGS4161 ,Set P0_3 input 
+     13          *************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     14          void Init_TGS4161(void)
+   \                     Init_TGS4161:
+     15          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     16            P0DIR &= ~0x01;                   //P0_0-->Inp
+   \   000000   53FDFE       ANL     0xfd,#0xfe
+     17            ADCCFG |= 0x01;                   //Set P0_0 Analog Periferal I/O
+   \   000003   43F201       ORL     0xf2,#0x1
+     18          }
+   \   000006   02....       LJMP    ?BRET
+   \   000009                REQUIRE P0DIR
+   \   000009                REQUIRE ADCCFG
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     19          void background_TGS4161(void)
+   \                     background_TGS4161:
+     20          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+     21            unsigned int  value = 0, MSD = 0, LSD = 0;
+     22            static int i_TGS4161 = 0;
+     23            
+     24            ADCCON1 = 0x33;
+   \   000005   75B433       MOV     0xb4,#0x33
+     25            ADCCON3 = 0x00;
+   \   000008   75B600       MOV     0xb6,#0x0
+     26            
+     27            ADCCON1 |= 0x30;                  //Start a conversion sequence if ADCCON1.STSEL = 11 and no sequence is running.
+   \   00000B   43B430       ORL     0xb4,#0x30
+     28                                              
+     29            ADCCON3 |= 0x80;                  //AVDD5 pin
+   \   00000E   43B680       ORL     0xb6,#0x80
+     30            ADCCON3 |= 0x30;                  //512 decimation rate (12 bits ENOB)
+   \   000011   43B630       ORL     0xb6,#0x30
+     31            ADCCON3 |= 0x00;                  //AIN0
+   \   000014   85B6B6       MOV     0xb6,0xb6
+     32                             
+     33            ADCCON1 |= 0x40;                  //Start conversion
+   \   000017   43B440       ORL     0xb4,#0x40
+     34            while(!(ADCCON1 & 0x80));        
+   \                     ??background_TGS4161_0:
+   \   00001A   E5B4         MOV     A,0xb4
+   \   00001C   A2E7         MOV     C,0xE0 /* A   */.7
+   \   00001E   50FA         JNC     ??background_TGS4161_0
+     35          
+     36            LSD = ADCL;
+   \   000020   E5BA         MOV     A,0xba
+     37            LSD = LSD >>4;
+     38            MSD = ADCH;
+     39            MSD = MSD <<4;
+     40            value = LSD + MSD;                
+     41          
+     42            Temp_TGS4161[i_TGS4161++] = value;
+   \   000022   C4           SWAP    A
+   \   000023   540F         ANL     A,#0xf
+   \   000025   FA           MOV     R2,A
+   \   000026   E5BB         MOV     A,0xbb
+   \   000028   F5..         MOV     ?V0 + 0,A
+   \   00002A   75..00       MOV     ?V0 + 1,#0x0
+   \   00002D   7404         MOV     A,#0x4
+   \   00002F   78..         MOV     R0,#?V0 + 0
+   \   000031   12....       LCALL   ?S_SHL
+   \   000034   EA           MOV     A,R2
+   \   000035   25..         ADD     A,?V0 + 0
+   \   000037   FA           MOV     R2,A
+   \   000038   E4           CLR     A
+   \   000039   35..         ADDC    A,?V0 + 1
+   \   00003B   FB           MOV     R3,A
+   \   00003C   90....       MOV     DPTR,#??i_TGS4161
+   \   00003F   E0           MOVX    A,@DPTR
+   \   000040   F8           MOV     R0,A
+   \   000041   A3           INC     DPTR
+   \   000042   E0           MOVX    A,@DPTR
+   \   000043   F9           MOV     R1,A
+   \   000044   E8           MOV     A,R0
+   \   000045   33           RLC     A
+   \   000046   F8           MOV     R0,A
+   \   000047   E9           MOV     A,R1
+   \   000048   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   00004B   EA           MOV     A,R2
+   \   00004C   F0           MOVX    @DPTR,A
+   \   00004D   A3           INC     DPTR
+   \   00004E   EB           MOV     A,R3
+   \   00004F   F0           MOVX    @DPTR,A
+   \   000050   90....       MOV     DPTR,#??i_TGS4161
+   \   000053   E0           MOVX    A,@DPTR
+   \   000054   2401         ADD     A,#0x1
+   \   000056   F0           MOVX    @DPTR,A
+   \   000057   A3           INC     DPTR
+   \   000058   E0           MOVX    A,@DPTR
+   \   000059   3400         ADDC    A,#0x0
+   \   00005B   F0           MOVX    @DPTR,A
+     43            if(i_TGS4161 == 10)i_TGS4161=0;
+   \   00005C   90....       MOV     DPTR,#??i_TGS4161
+   \   00005F   E0           MOVX    A,@DPTR
+   \   000060   640A         XRL     A,#0xa
+   \   000062   7002         JNZ     ??background_TGS4161_1
+   \   000064   A3           INC     DPTR
+   \   000065   E0           MOVX    A,@DPTR
+   \                     ??background_TGS4161_1:
+   \   000066   7007         JNZ     ??background_TGS4161_2
+   \   000068   90....       MOV     DPTR,#??i_TGS4161
+   \   00006B   E4           CLR     A
+   \   00006C   F0           MOVX    @DPTR,A
+   \   00006D   A3           INC     DPTR
+   \   00006E   F0           MOVX    @DPTR,A
+     44          }
+   \                     ??background_TGS4161_2:
+   \   00006F                REQUIRE ?Subroutine0
+   \   00006F                REQUIRE ADCCON1
+   \   00006F                REQUIRE ADCCON3
+   \   00006F                REQUIRE ADCL
+   \   00006F                REQUIRE ADCH
+   \   00006F                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F02         MOV     R7,#0x2
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   33           RLC     A
+   \   000001   F9           MOV     R1,A
+   \   000002   74..         MOV     A,#Temp_TGS4161 & 0xff
+   \   000004   28           ADD     A,R0
+   \   000005   F582         MOV     DPL,A
+   \   000007   74..         MOV     A,#(Temp_TGS4161 >> 8) & 0xff
+   \   000009   39           ADDC    A,R1
+   \   00000A   F583         MOV     DPH,A
+   \   00000C   22           RET
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     ??i_TGS4161:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     45          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     46          unsigned int TGS4161_EMF_350ppm(void)
+   \                     TGS4161_EMF_350ppm:
+     47          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+     48            unsigned int EMF1,ShiWen;
+     49            ShiWen = Shiwen();
+   \   000005                ; Setup parameters for call to function Shiwen
+   \   000005   12....       LCALL   ??Shiwen?relay
+   \   000008   8A..         MOV     ?V0 + 0,R2
+   \   00000A   8B..         MOV     ?V0 + 1,R3
+   \   00000C   A8..         MOV     R0,?V0 + 0
+   \   00000E   A9..         MOV     R1,?V0 + 1
+     50          
+     51            if(ShiWen <=400 && ShiWen >300)
+   \   000010   E8           MOV     A,R0
+   \   000011   24D3         ADD     A,#-0x2d
+   \   000013   FA           MOV     R2,A
+   \   000014   E9           MOV     A,R1
+   \   000015   34FE         ADDC    A,#-0x2
+   \   000017   FB           MOV     R3,A
+   \   000018   C3           CLR     C
+   \   000019   EA           MOV     A,R2
+   \   00001A   9464         SUBB    A,#0x64
+   \   00001C   EB           MOV     A,R3
+   \   00001D   9400         SUBB    A,#0x0
+   \   00001F   E8           MOV     A,R0
+   \   000020   501F         JNC     ??TGS4161_EMF_350ppm_0
+     52            {
+     53              ShiWen = ShiWen-300;
+     54              EMF1 = 306+ShiWen*8/100;
+     55              return EMF1;
+   \   000022   24D4         ADD     A,#-0x2c
+   \   000024   F5..         MOV     ?V0 + 0,A
+   \   000026   E9           MOV     A,R1
+   \   000027   34FE         ADDC    A,#-0x2
+   \   000029   F5..         MOV     ?V0 + 1,A
+   \   00002B   7403         MOV     A,#0x3
+   \   00002D   78..         MOV     R0,#?V0 + 0
+   \   00002F   12....       LCALL   ?S_SHL
+   \   000032   A8..         MOV     R0,?V0 + 0
+   \   000034   A9..         MOV     R1,?V0 + 1
+   \   000036   7A64         MOV     R2,#0x64
+   \   000038   FB           MOV     R3,A
+   \   000039   12....       LCALL   ?US_DIV_MOD
+   \   00003C   E8           MOV     A,R0
+   \   00003D   2432         ADD     A,#0x32
+   \   00003F   8052         SJMP    ??TGS4161_EMF_350ppm_1
+     56            }
+     57            
+     58            if(ShiWen <=300 && ShiWen >200)
+   \                     ??TGS4161_EMF_350ppm_0:
+   \   000041   2437         ADD     A,#0x37
+   \   000043   12....       LCALL   ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   000046   E8           MOV     A,R0
+   \   000047   5022         JNC     ??TGS4161_EMF_350ppm_2
+     59            {
+     60              ShiWen = ShiWen-200;
+     61              EMF1 = 300+ShiWen*6/100;
+     62              return EMF1;
+   \   000049   2438         ADD     A,#0x38
+   \   00004B   F8           MOV     R0,A
+   \   00004C   E9           MOV     A,R1
+   \   00004D   34FF         ADDC    A,#-0x1
+   \   00004F   F9           MOV     R1,A
+   \   000050   E8           MOV     A,R0
+   \   000051   75F006       MOV     B,#0x6
+   \   000054   A4           MUL     AB
+   \   000055   F8           MOV     R0,A
+   \   000056   AAF0         MOV     R2,B
+   \   000058   75F006       MOV     B,#0x6
+   \   00005B   E9           MOV     A,R1
+   \   00005C   A4           MUL     AB
+   \   00005D   2A           ADD     A,R2
+   \   00005E   F9           MOV     R1,A
+   \   00005F   7A64         MOV     R2,#0x64
+   \   000061   7B00         MOV     R3,#0x0
+   \   000063   12....       LCALL   ?US_DIV_MOD
+   \   000066   E8           MOV     A,R0
+   \   000067   242C         ADD     A,#0x2c
+   \   000069   8028         SJMP    ??TGS4161_EMF_350ppm_1
+     63            }
+     64            
+     65            if(ShiWen <=200 && ShiWen >100)
+   \                     ??TGS4161_EMF_350ppm_2:
+   \   00006B   249B         ADD     A,#-0x65
+   \   00006D   12....       LCALL   ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   000070   5028         JNC     ??TGS4161_EMF_350ppm_3
+     66            {
+     67              ShiWen = ShiWen-100;
+     68              EMF1 = 293+ShiWen*7/100;
+     69              return EMF1;
+   \   000072   E8           MOV     A,R0
+   \   000073   249C         ADD     A,#-0x64
+   \   000075   F8           MOV     R0,A
+   \   000076   E9           MOV     A,R1
+   \   000077   34FF         ADDC    A,#-0x1
+   \   000079   F9           MOV     R1,A
+   \   00007A   E8           MOV     A,R0
+   \   00007B   75F007       MOV     B,#0x7
+   \   00007E   A4           MUL     AB
+   \   00007F   F8           MOV     R0,A
+   \   000080   AAF0         MOV     R2,B
+   \   000082   75F007       MOV     B,#0x7
+   \   000085   E9           MOV     A,R1
+   \   000086   A4           MUL     AB
+   \   000087   2A           ADD     A,R2
+   \   000088   F9           MOV     R1,A
+   \   000089   7A64         MOV     R2,#0x64
+   \   00008B   7B00         MOV     R3,#0x0
+   \   00008D   12....       LCALL   ?US_DIV_MOD
+   \   000090   E8           MOV     A,R0
+   \   000091   2425         ADD     A,#0x25
+   \                     ??TGS4161_EMF_350ppm_1:
+   \   000093   FA           MOV     R2,A
+   \   000094   E9           MOV     A,R1
+   \   000095   3401         ADDC    A,#0x1
+   \   000097   FB           MOV     R3,A
+   \   000098   8004         SJMP    ??TGS4161_EMF_350ppm_4
+     70            }
+     71            return 0;
+   \                     ??TGS4161_EMF_350ppm_3:
+   \   00009A   7A00         MOV     R2,#0x0
+   \   00009C   7B00         MOV     R3,#0x0
+   \                     ??TGS4161_EMF_350ppm_4:
+   \   00009E   02....       LJMP    ?Subroutine0 & 0xFFFF
+     72          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   FA           MOV     R2,A
+   \   000001   E9           MOV     A,R1
+   \   000002   34FF         ADDC    A,#-0x1
+   \   000004   FB           MOV     R3,A
+   \   000005   C3           CLR     C
+   \   000006   EA           MOV     A,R2
+   \   000007   9464         SUBB    A,#0x64
+   \   000009   EB           MOV     A,R3
+   \   00000A   9400         SUBB    A,#0x0
+   \   00000C   22           RET
+     73          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     74          void Read_TGS4161(void)
+   \                     Read_TGS4161:
+     75          {  
+   \   000000   74EC         MOV     A,#-0x14
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 20
+   \   000005                ; Auto size: 48
+   \   000005   74D0         MOV     A,#-0x30
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+     76          /*************************************************/  
+     77            unsigned int i =0, EMF2 = 0, Delta_EMF = 0, EMF1 = 0, temp = 0;
+   \   00000A   75..00       MOV     ?V0 + 0,#0x0
+   \   00000D   75..00       MOV     ?V0 + 1,#0x0
+   \   000010   7E00         MOV     R6,#0x0
+   \   000012   7F00         MOV     R7,#0x0
+     78            float X = 0;
+     79            EMF1 = TGS4161_EMF_350ppm(); 
+   \   000014                ; Setup parameters for call to function TGS4161_EMF_350ppm
+   \   000014   12....       LCALL   ??TGS4161_EMF_350ppm?relay
+   \   000017   8A..         MOV     ?V0 + 2,R2
+   \   000019   8B..         MOV     ?V0 + 3,R3
+     80            while(i < 10)temp = temp + Temp_TGS4161[i++];
+   \                     ??Read_TGS4161_0:
+   \   00001B   E5..         MOV     A,?V0 + 0
+   \   00001D   C3           CLR     C
+   \   00001E   33           RLC     A
+   \   00001F   F8           MOV     R0,A
+   \   000020   E5..         MOV     A,?V0 + 1
+   \   000022   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_5:
+   \   000025   E0           MOVX    A,@DPTR
+   \   000026   2E           ADD     A,R6
+   \   000027   FE           MOV     R6,A
+   \   000028   A3           INC     DPTR
+   \   000029   E0           MOVX    A,@DPTR
+   \   00002A   3F           ADDC    A,R7
+   \   00002B   FF           MOV     R7,A
+   \   00002C   E5..         MOV     A,?V0 + 0
+   \   00002E   2401         ADD     A,#0x1
+   \   000030   F5..         MOV     ?V0 + 0,A
+   \   000032   E5..         MOV     A,?V0 + 1
+   \   000034   3400         ADDC    A,#0x0
+   \   000036   F5..         MOV     ?V0 + 1,A
+   \   000038   C3           CLR     C
+   \   000039   E5..         MOV     A,?V0 + 0
+   \   00003B   940A         SUBB    A,#0xa
+   \   00003D   E5..         MOV     A,?V0 + 1
+   \   00003F   9400         SUBB    A,#0x0
+   \   000041   40D8         JC      ??Read_TGS4161_0
+     81            temp = temp /10;
+     82            X = (float)temp*1000/4096;
+     83            EMF2 = (int)X;
+   \   000043   EE           MOV     A,R6
+   \   000044   F8           MOV     R0,A
+   \   000045   EF           MOV     A,R7
+   \   000046   F9           MOV     R1,A
+   \   000047   7A0A         MOV     R2,#0xa
+   \   000049   7B00         MOV     R3,#0x0
+   \   00004B   12....       LCALL   ?US_DIV_MOD
+   \   00004E   88..         MOV     ?V0 + 4,R0
+   \   000050   89..         MOV     ?V0 + 5,R1
+   \   000052   E4           CLR     A
+   \   000053   F5..         MOV     ?V0 + 6,A
+   \   000055   F5..         MOV     ?V0 + 7,A
+   \   000057   78..         MOV     R0,#?V0 + 4
+   \   000059   12....       LCALL   ?UL_TO_FLT
+   \   00005C   90....       MOV     DPTR,#__Constant_447a0000
+   \   00005F   78..         MOV     R0,#?V0 + 8
+   \   000061   12....       LCALL   ?L_MOV_X
+   \   000064   78..         MOV     R0,#?V0 + 4
+   \   000066   79..         MOV     R1,#?V0 + 8
+   \   000068   12....       LCALL   ?FLT_MUL
+   \   00006B   90....       MOV     DPTR,#__Constant_39800000
+   \   00006E   78..         MOV     R0,#?V0 + 8
+   \   000070   12....       LCALL   ?L_MOV_X
+   \   000073   78..         MOV     R0,#?V0 + 4
+   \   000075   79..         MOV     R1,#?V0 + 8
+   \   000077   12....       LCALL   ?FLT_MUL
+   \   00007A   78..         MOV     R0,#?V0 + 4
+   \   00007C   12....       LCALL   ?FLT_TO_L
+   \   00007F   A8..         MOV     R0,?V0 + 4
+   \   000081   A9..         MOV     R1,?V0 + 5
+     84            Delta_EMF = EMF1 - EMF2;
+   \   000083   E5..         MOV     A,?V0 + 2
+   \   000085   C3           CLR     C
+   \   000086   98           SUBB    A,R0
+   \   000087   FE           MOV     R6,A
+   \   000088   E5..         MOV     A,?V0 + 3
+   \   00008A   99           SUBB    A,R1
+   \   00008B   FF           MOV     R7,A
+     85          /*************************************************/  
+     86            unsigned char UnderThreshold[37] = "Concentration of CO2 is under 350ppm.",
+   \   00008C   740B         MOV     A,#0xb
+   \   00008E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000091   AC82         MOV     R4,DPL
+   \   000093   AD83         MOV     R5,DPH
+   \   000095   7583..       MOV     DPH,#(`?<Constant "Concentration of CO2 ...">` >> 8) & 0xff
+   \   000098   7582..       MOV     DPL,#`?<Constant "Concentration of CO2 ...">` & 0xff
+   \   00009B   7425         MOV     A,#0x25
+   \   00009D   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+     87                 str_TGS4161[11] = "CO2:    ppm";
+   \   0000A0   85..82       MOV     DPL,?XSP + 0
+   \   0000A3   85..83       MOV     DPH,?XSP + 1
+   \   0000A6   AC82         MOV     R4,DPL
+   \   0000A8   AD83         MOV     R5,DPH
+   \   0000AA   7583..       MOV     DPH,#(`?<Constant "CO2:    ppm">` >> 8) & 0xff
+   \   0000AD   7582..       MOV     DPL,#`?<Constant "CO2:    ppm">` & 0xff
+   \   0000B0   740B         MOV     A,#0xb
+   \   0000B2   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+     88            unsigned int GasCon = 0;
+   \   0000B5   FC           MOV     R4,A
+   \   0000B6   FD           MOV     R5,A
+     89            
+     90            if( EMF2 > EMF1)
+   \   0000B7   C3           CLR     C
+   \   0000B8   E5..         MOV     A,?V0 + 2
+   \   0000BA   98           SUBB    A,R0
+   \   0000BB   E5..         MOV     A,?V0 + 3
+   \   0000BD   99           SUBB    A,R1
+   \   0000BE   502E         JNC     ??Read_TGS4161_1
+     91            {
+     92              UartSendString(UnderThreshold, 37);
+   \   0000C0                ; Setup parameters for call to function UartSendString
+   \   0000C0   7C25         MOV     R4,#0x25
+   \   0000C2   740B         MOV     A,#0xb
+   \   0000C4   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000C7   AA82         MOV     R2,DPL
+   \   0000C9   AB83         MOV     R3,DPH
+   \   0000CB   12....       LCALL   ??UartSendString?relay
+     93              SendData(10,0xff);
+   \   0000CE                ; Setup parameters for call to function SendData
+   \   0000CE   79FF         MOV     R1,#-0x1
+   \   0000D0   7A0A         MOV     R2,#0xa
+   \   0000D2   7B00         MOV     R3,#0x0
+   \   0000D4   12....       LCALL   ??SendData?relay
+     94              SendData(11,0xff);
+   \   0000D7                ; Setup parameters for call to function SendData
+   \   0000D7   79FF         MOV     R1,#-0x1
+   \   0000D9   7A0B         MOV     R2,#0xb
+   \   0000DB   7B00         MOV     R3,#0x0
+   \   0000DD   12....       LCALL   ??SendData?relay
+     95              SendData(12,0xff);
+   \   0000E0                ; Setup parameters for call to function SendData
+   \   0000E0   79FF         MOV     R1,#-0x1
+   \   0000E2   7A0C         MOV     R2,#0xc
+   \   0000E4   7B00         MOV     R3,#0x0
+   \   0000E6   12....       LCALL   ??SendData?relay
+     96              SendData(13,0xff);
+   \   0000E9                ; Setup parameters for call to function SendData
+   \   0000E9   79FF         MOV     R1,#-0x1
+   \   0000EB   02....       LJMP    ??Read_TGS4161_2 & 0xFFFF
+     97            }
+     98            else
+     99            {
+    100              if(Delta_EMF > 0 && Delta_EMF <= 15)
+   \                     ??Read_TGS4161_1:
+   \   0000EE   EE           MOV     A,R6
+   \   0000EF   4F           ORL     A,R7
+   \   0000F0   602B         JZ      ??Read_TGS4161_3
+   \   0000F2   C3           CLR     C
+   \   0000F3   EE           MOV     A,R6
+   \   0000F4   9410         SUBB    A,#0x10
+   \   0000F6   EF           MOV     A,R7
+   \   0000F7   9400         SUBB    A,#0x0
+   \   0000F9   5022         JNC     ??Read_TGS4161_3
+    101                GasCon = Delta_EMF*50/3+350;
+   \   0000FB   EE           MOV     A,R6
+   \   0000FC   F8           MOV     R0,A
+   \   0000FD   EF           MOV     A,R7
+   \   0000FE   F9           MOV     R1,A
+   \   0000FF   E8           MOV     A,R0
+   \   000100   75F032       MOV     B,#0x32
+   \   000103   A4           MUL     AB
+   \   000104   F8           MOV     R0,A
+   \   000105   AAF0         MOV     R2,B
+   \   000107   75F032       MOV     B,#0x32
+   \   00010A   E9           MOV     A,R1
+   \   00010B   A4           MUL     AB
+   \   00010C   2A           ADD     A,R2
+   \   00010D   F9           MOV     R1,A
+   \   00010E   7A03         MOV     R2,#0x3
+   \   000110   7B00         MOV     R3,#0x0
+   \   000112   12....       LCALL   ?US_DIV_MOD
+   \   000115   E8           MOV     A,R0
+   \   000116   245E         ADD     A,#0x5e
+   \   000118   FC           MOV     R4,A
+   \   000119   E9           MOV     A,R1
+   \   00011A   3401         ADDC    A,#0x1
+   \   00011C   FD           MOV     R5,A
+    102              if(Delta_EMF >15 && Delta_EMF <= 27)
+   \                     ??Read_TGS4161_3:
+   \   00011D   EE           MOV     A,R6
+   \   00011E   24F0         ADD     A,#-0x10
+   \   000120   F8           MOV     R0,A
+   \   000121   EF           MOV     A,R7
+   \   000122   34FF         ADDC    A,#-0x1
+   \   000124   F9           MOV     R1,A
+   \   000125   C3           CLR     C
+   \   000126   E8           MOV     A,R0
+   \   000127   940C         SUBB    A,#0xc
+   \   000129   E9           MOV     A,R1
+   \   00012A   9400         SUBB    A,#0x0
+   \   00012C   5022         JNC     ??Read_TGS4161_4
+    103                GasCon = Delta_EMF*100/3+600;
+   \   00012E   EE           MOV     A,R6
+   \   00012F   F8           MOV     R0,A
+   \   000130   EF           MOV     A,R7
+   \   000131   F9           MOV     R1,A
+   \   000132   E8           MOV     A,R0
+   \   000133   75F064       MOV     B,#0x64
+   \   000136   A4           MUL     AB
+   \   000137   F8           MOV     R0,A
+   \   000138   AAF0         MOV     R2,B
+   \   00013A   75F064       MOV     B,#0x64
+   \   00013D   E9           MOV     A,R1
+   \   00013E   A4           MUL     AB
+   \   00013F   2A           ADD     A,R2
+   \   000140   F9           MOV     R1,A
+   \   000141   7A03         MOV     R2,#0x3
+   \   000143   7B00         MOV     R3,#0x0
+   \   000145   12....       LCALL   ?US_DIV_MOD
+   \   000148   E8           MOV     A,R0
+   \   000149   2458         ADD     A,#0x58
+   \   00014B   FC           MOV     R4,A
+   \   00014C   E9           MOV     A,R1
+   \   00014D   3402         ADDC    A,#0x2
+   \   00014F   FD           MOV     R5,A
+    104              if(Delta_EMF >27 && Delta_EMF <= 75)
+   \                     ??Read_TGS4161_4:
+   \   000150   EE           MOV     A,R6
+   \   000151   24E4         ADD     A,#-0x1c
+   \   000153   F8           MOV     R0,A
+   \   000154   EF           MOV     A,R7
+   \   000155   34FF         ADDC    A,#-0x1
+   \   000157   F9           MOV     R1,A
+   \   000158   C3           CLR     C
+   \   000159   E8           MOV     A,R0
+   \   00015A   9430         SUBB    A,#0x30
+   \   00015C   E9           MOV     A,R1
+   \   00015D   9400         SUBB    A,#0x0
+   \   00015F   5028         JNC     ??Read_TGS4161_5
+    105                GasCon = Delta_EMF*625/6+1000;
+   \   000161   EE           MOV     A,R6
+   \   000162   75F071       MOV     B,#0x71
+   \   000165   A4           MUL     AB
+   \   000166   CE           XCH     A,R6
+   \   000167   A8F0         MOV     R0,B
+   \   000169   75F002       MOV     B,#0x2
+   \   00016C   A4           MUL     AB
+   \   00016D   28           ADD     A,R0
+   \   00016E   F8           MOV     R0,A
+   \   00016F   75F071       MOV     B,#0x71
+   \   000172   EF           MOV     A,R7
+   \   000173   A4           MUL     AB
+   \   000174   28           ADD     A,R0
+   \   000175   FF           MOV     R7,A
+   \   000176   EE           MOV     A,R6
+   \   000177   F8           MOV     R0,A
+   \   000178   EF           MOV     A,R7
+   \   000179   F9           MOV     R1,A
+   \   00017A   7A06         MOV     R2,#0x6
+   \   00017C   7B00         MOV     R3,#0x0
+   \   00017E   12....       LCALL   ?US_DIV_MOD
+   \   000181   E8           MOV     A,R0
+   \   000182   24E8         ADD     A,#-0x18
+   \   000184   FC           MOV     R4,A
+   \   000185   E9           MOV     A,R1
+   \   000186   3403         ADDC    A,#0x3
+   \   000188   FD           MOV     R5,A
+    106              
+    107              str_TGS4161[4] = GasCon/1000 +0x30;
+   \                     ??Read_TGS4161_5:
+   \   000189   EC           MOV     A,R4
+   \   00018A   F8           MOV     R0,A
+   \   00018B   ED           MOV     A,R5
+   \   00018C   F9           MOV     R1,A
+   \   00018D   7AE8         MOV     R2,#-0x18
+   \   00018F   7B03         MOV     R3,#0x3
+   \   000191   12....       LCALL   ?US_DIV_MOD
+   \   000194   E8           MOV     A,R0
+   \   000195   2430         ADD     A,#0x30
+   \   000197   F5..         MOV     ?V0 + 1,A
+   \   000199   7404         MOV     A,#0x4
+   \   00019B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00019E   E5..         MOV     A,?V0 + 1
+   \   0001A0   12....       LCALL   ?Subroutine2 & 0xFFFF
+    108              str_TGS4161[5] = GasCon/100%10 +0x30;
+   \                     ??CrossCallReturnLabel_2:
+   \   0001A3   12....       LCALL   ?US_DIV_MOD
+   \   0001A6   7A0A         MOV     R2,#0xa
+   \   0001A8   7B00         MOV     R3,#0x0
+   \   0001AA   12....       LCALL   ?US_DIV_MOD
+   \   0001AD   EA           MOV     A,R2
+   \   0001AE   2430         ADD     A,#0x30
+   \   0001B0   FE           MOV     R6,A
+   \   0001B1   7405         MOV     A,#0x5
+   \   0001B3   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001B6   EE           MOV     A,R6
+   \   0001B7   12....       LCALL   ?Subroutine2 & 0xFFFF
+    109              str_TGS4161[6] = GasCon%100/10 +0x30;
+   \                     ??CrossCallReturnLabel_3:
+   \   0001BA   12....       LCALL   ?US_DIV_MOD
+   \   0001BD   EA           MOV     A,R2
+   \   0001BE   F8           MOV     R0,A
+   \   0001BF   EB           MOV     A,R3
+   \   0001C0   F9           MOV     R1,A
+   \   0001C1   7A0A         MOV     R2,#0xa
+   \   0001C3   7B00         MOV     R3,#0x0
+   \   0001C5   12....       LCALL   ?US_DIV_MOD
+   \   0001C8   E8           MOV     A,R0
+   \   0001C9   2430         ADD     A,#0x30
+   \   0001CB   FF           MOV     R7,A
+   \   0001CC   7406         MOV     A,#0x6
+   \   0001CE   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001D1   EF           MOV     A,R7
+   \   0001D2   F0           MOVX    @DPTR,A
+    110              str_TGS4161[7] = GasCon%10 +0x30;
+   \   0001D3   EC           MOV     A,R4
+   \   0001D4   F8           MOV     R0,A
+   \   0001D5   ED           MOV     A,R5
+   \   0001D6   F9           MOV     R1,A
+   \   0001D7   7A0A         MOV     R2,#0xa
+   \   0001D9   7B00         MOV     R3,#0x0
+   \   0001DB   12....       LCALL   ?US_DIV_MOD
+   \   0001DE   EA           MOV     A,R2
+   \   0001DF   2430         ADD     A,#0x30
+   \   0001E1   F5..         MOV     ?V0 + 0,A
+   \   0001E3   7407         MOV     A,#0x7
+   \   0001E5   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001E8   E5..         MOV     A,?V0 + 0
+   \   0001EA   F0           MOVX    @DPTR,A
+    111              
+    112              SendData(10,str_TGS4161[4]);
+   \   0001EB                ; Setup parameters for call to function SendData
+   \   0001EB   A9..         MOV     R1,?V0 + 1
+   \   0001ED   7A0A         MOV     R2,#0xa
+   \   0001EF   7B00         MOV     R3,#0x0
+   \   0001F1   12....       LCALL   ??SendData?relay
+    113              SendData(11,str_TGS4161[5]);
+   \   0001F4                ; Setup parameters for call to function SendData
+   \   0001F4   EE           MOV     A,R6
+   \   0001F5   F9           MOV     R1,A
+   \   0001F6   7A0B         MOV     R2,#0xb
+   \   0001F8   7B00         MOV     R3,#0x0
+   \   0001FA   12....       LCALL   ??SendData?relay
+    114              SendData(12,str_TGS4161[6]);
+   \   0001FD                ; Setup parameters for call to function SendData
+   \   0001FD   EF           MOV     A,R7
+   \   0001FE   F9           MOV     R1,A
+   \   0001FF   7A0C         MOV     R2,#0xc
+   \   000201   7B00         MOV     R3,#0x0
+   \   000203   12....       LCALL   ??SendData?relay
+    115              SendData(13,str_TGS4161[7]);
+   \   000206                ; Setup parameters for call to function SendData
+   \   000206   A9..         MOV     R1,?V0 + 0
+   \                     ??Read_TGS4161_2:
+   \   000208   7A0D         MOV     R2,#0xd
+   \   00020A   7B00         MOV     R3,#0x0
+   \   00020C   12....       LCALL   ??SendData?relay
+    116              /*
+    117              UartSendString(str_TGS4161, 11);*/
+    118            }
+    119          }
+   \   00020F   7430         MOV     A,#0x30
+   \   000211   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000214   7F0C         MOV     R7,#0xc
+   \   000216   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001   EC           MOV     A,R4
+   \   000002   F8           MOV     R0,A
+   \   000003   ED           MOV     A,R5
+   \   000004   F9           MOV     R1,A
+   \   000005   7A64         MOV     R2,#0x64
+   \   000007   7B00         MOV     R3,#0x0
+   \   000009   22           RET
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Init_TGS4161?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Init_TGS4161
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??background_TGS4161?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    background_TGS4161
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??TGS4161_EMF_350ppm?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    TGS4161_EMF_350ppm
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Read_TGS4161?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Read_TGS4161
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Concentration of CO2 ...">`:
+   \   000000   436F6E63     DB 43H, 6FH, 6EH, 63H, 65H, 6EH, 74H, 72H
+   \            656E7472
+   \   000008   6174696F     DB 61H, 74H, 69H, 6FH, 6EH, 20H, 6FH, 66H
+   \            6E206F66
+   \   000010   20434F32     DB 20H, 43H, 4FH, 32H, 20H, 69H, 73H, 20H
+   \            20697320
+   \   000018   756E6465     DB 75H, 6EH, 64H, 65H, 72H, 20H, 33H, 35H
+   \            72203335
+   \   000020   3070706D     DB 30H, 70H, 70H, 6DH, 2EH
+   \            2E      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "CO2:    ppm">`:
+   \   000000   434F323A     DB 43H, 4FH, 32H, 3AH, 20H, 20H, 20H, 20H
+   \            20202020
+   \   000008   70706D       DB 70H, 70H, 6DH
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_447a0000:
+   \   000000   00007A44     DD 447A0000H
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_39800000:
+   \   000000   00008039     DD 39800000H
+    120          
+
+   Maximum stack usage in bytes:
+
+   ISTACK PSTACK XSTACK Function
+   ------ ------ ------ --------
+       0      0      0  Init_TGS4161
+       2      0     68  Read_TGS4161
+                          0 0 68 -> SendData
+                          0 0 68 -> TGS4161_EMF_350ppm
+                          0 0 68 -> UartSendString
+       0      0     78  TGS4161_EMF_350ppm
+                          0 0 10 -> Shiwen
+       0      0     10  background_TGS4161
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      11  ?<Constant "CO2:    ppm">
+      37  ?<Constant "Concentration of CO2 ...">
+       6  ??Init_TGS4161?relay
+       6  ??Read_TGS4161?relay
+       6  ??TGS4161_EMF_350ppm?relay
+       6  ??background_TGS4161?relay
+       5  ?Subroutine0
+      13  ?Subroutine1
+      10  ?Subroutine2
+      13  ?Subroutine3
+       1  ADCCFG
+       1  ADCCON1
+       1  ADCCON3
+       1  ADCH
+       1  ADCL
+       9  Init_TGS4161
+       1  P0DIR
+     537  Read_TGS4161
+     161  TGS4161_EMF_350ppm
+      20  Temp_TGS4161
+       4  __Constant_39800000
+       4  __Constant_447a0000
+     111  background_TGS4161
+       2  i_TGS4161
+
+ 
+ 859 bytes in segment BANKED_CODE
+  24 bytes in segment BANK_RELAYS
+   6 bytes in segment SFR_AN
+  56 bytes in segment XDATA_ROM_C
+  22 bytes in segment XDATA_Z
+ 
+ 883 bytes of CODE  memory
+  48 bytes of CONST memory (+ 8 bytes shared)
+   0 bytes of DATA  memory (+ 6 bytes shared)
+  22 bytes of XDATA memory
+
+Errors: none
+Warnings: none

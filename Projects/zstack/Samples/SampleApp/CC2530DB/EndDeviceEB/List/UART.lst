@@ -1,0 +1,335 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             19/Sep/2015  12:30:18 #
+# Copyright 2004-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#                                                                             #
+#    Source file        =  D:\desk\cc2530\ch5\3 new task perfect ROOM1        #
+#                          DHT22\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\Source\UART.C                                  #
+#    Command line       =  -f "D:\desk\cc2530\ch5\3 new task perfect ROOM1    #
+#                          DHT22\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg" #
+#                           (-DCPU32MHZ -DROOT=__near_func                    #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "D:\desk\cc2530\ch5\3 new   #
+#                          task perfect ROOM1 DHT22\ZStack-2.5.1a\Projects\zs #
+#                          tack\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC2 #
+#                          530DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=0       #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFF1                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "D:\desk\cc2530\ch5\3 new   #
+#                          task perfect ROOM1 DHT22\ZStack-2.5.1a\Projects\zs #
+#                          tack\Samples\SampleApp\Source\UART.C" -D           #
+#                          NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D            #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG  #
+#                          -lC "D:\desk\cc2530\ch5\3 new task perfect ROOM1   #
+#                          DHT22\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\EndDeviceEB\List\" -lA                #
+#                          "D:\desk\cc2530\ch5\3 new task perfect ROOM1       #
+#                          DHT22\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\EndDeviceEB\List\" --diag_suppress    #
+#                          Pe001,Pa010 -o "D:\desk\cc2530\ch5\3 new task      #
+#                          perfect ROOM1 DHT22\ZStack-2.5.1a\Projects\zstack\ #
+#                          Samples\SampleApp\CC2530DB\EndDeviceEB\Obj\" -e    #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "D:\desk\cc2530\ch5\3 new task perfect ROOM1    #
+#                          DHT22\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\" -I "D:\desk\cc2530\ch5\3 new task   #
+#                          perfect ROOM1 DHT22\ZStack-2.5.1a\Projects\zstack\ #
+#                          Samples\SampleApp\CC2530DB\..\Source\" -I          #
+#                          "D:\desk\cc2530\ch5\3 new task perfect ROOM1       #
+#                          DHT22\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\ZMain\TI2530DB\" -I          #
+#                          "D:\desk\cc2530\ch5\3 new task perfect ROOM1       #
+#                          DHT22\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\hal\include #
+#                          \" -I "D:\desk\cc2530\ch5\3 new task perfect       #
+#                          ROOM1 DHT22\ZStack-2.5.1a\Projects\zstack\Samples\ #
+#                          SampleApp\CC2530DB\..\..\..\..\..\Components\hal\t #
+#                          arget\CC2530EB\" -I "D:\desk\cc2530\ch5\3 new      #
+#                          task perfect ROOM1 DHT22\ZStack-2.5.1a\Projects\zs #
+#                          tack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com #
+#                          ponents\mac\include\" -I "D:\desk\cc2530\ch5\3     #
+#                          new task perfect ROOM1 DHT22\ZStack-2.5.1a\Project #
+#                          s\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\.. #
+#                          \Components\mac\high_level\" -I                    #
+#                          "D:\desk\cc2530\ch5\3 new task perfect ROOM1       #
+#                          DHT22\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\mac\low_lev #
+#                          el\srf04\" -I "D:\desk\cc2530\ch5\3 new task       #
+#                          perfect ROOM1 DHT22\ZStack-2.5.1a\Projects\zstack\ #
+#                          Samples\SampleApp\CC2530DB\..\..\..\..\..\Componen #
+#                          ts\mac\low_level\srf04\single_chip\" -I            #
+#                          "D:\desk\cc2530\ch5\3 new task perfect ROOM1       #
+#                          DHT22\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\mt\" -I     #
+#                          "D:\desk\cc2530\ch5\3 new task perfect ROOM1       #
+#                          DHT22\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\osal\includ #
+#                          e\" -I "D:\desk\cc2530\ch5\3 new task perfect      #
+#                          ROOM1 DHT22\ZStack-2.5.1a\Projects\zstack\Samples\ #
+#                          SampleApp\CC2530DB\..\..\..\..\..\Components\servi #
+#                          ces\saddr\" -I "D:\desk\cc2530\ch5\3 new task      #
+#                          perfect ROOM1 DHT22\ZStack-2.5.1a\Projects\zstack\ #
+#                          Samples\SampleApp\CC2530DB\..\..\..\..\..\Componen #
+#                          ts\services\sdata\" -I "D:\desk\cc2530\ch5\3 new   #
+#                          task perfect ROOM1 DHT22\ZStack-2.5.1a\Projects\zs #
+#                          tack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com #
+#                          ponents\stack\af\" -I "D:\desk\cc2530\ch5\3 new    #
+#                          task perfect ROOM1 DHT22\ZStack-2.5.1a\Projects\zs #
+#                          tack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com #
+#                          ponents\stack\nwk\" -I "D:\desk\cc2530\ch5\3 new   #
+#                          task perfect ROOM1 DHT22\ZStack-2.5.1a\Projects\zs #
+#                          tack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com #
+#                          ponents\stack\sapi\" -I "D:\desk\cc2530\ch5\3 new  #
+#                          task perfect ROOM1 DHT22\ZStack-2.5.1a\Projects\zs #
+#                          tack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com #
+#                          ponents\stack\sec\" -I "D:\desk\cc2530\ch5\3 new   #
+#                          task perfect ROOM1 DHT22\ZStack-2.5.1a\Projects\zs #
+#                          tack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com #
+#                          ponents\stack\sys\" -I "D:\desk\cc2530\ch5\3 new   #
+#                          task perfect ROOM1 DHT22\ZStack-2.5.1a\Projects\zs #
+#                          tack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com #
+#                          ponents\stack\zdo\" -I "D:\desk\cc2530\ch5\3 new   #
+#                          task perfect ROOM1 DHT22\ZStack-2.5.1a\Projects\zs #
+#                          tack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com #
+#                          ponents\zmac\" -I "D:\desk\cc2530\ch5\3 new task   #
+#                          perfect ROOM1 DHT22\ZStack-2.5.1a\Projects\zstack\ #
+#                          Samples\SampleApp\CC2530DB\..\..\..\..\..\Componen #
+#                          ts\zmac\f8w\" -Ohz                                 #
+#    List file          =  D:\desk\cc2530\ch5\3 new task perfect ROOM1        #
+#                          DHT22\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\EndDeviceEB\List\UART.lst             #
+#    Object file        =  D:\desk\cc2530\ch5\3 new task perfect ROOM1        #
+#                          DHT22\ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\EndDeviceEB\Obj\UART.r51              #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\desk\cc2530\ch5\3 new task perfect ROOM1 DHT22\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\UART.C
+      1          #include <ioCC2530.h>
+
+   \                                 In  segment SFR_AN, at 0x86
+   \   unsigned char volatile __sfr U0CSR
+   \                     U0CSR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc1
+   \   unsigned char volatile __sfr U0DBUF
+   \                     U0DBUF:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc2
+   \   unsigned char volatile __sfr U0BAUD
+   \                     U0BAUD:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc5
+   \   unsigned char volatile __sfr U0GCR
+   \                     U0GCR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe8
+   \   union <unnamed> volatile __sfr _A_IRCON2
+   \                     _A_IRCON2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf1
+   \   unsigned char volatile __sfr PERCFG
+   \                     PERCFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf3
+   \   unsigned char volatile __sfr P0SEL
+   \                     P0SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xff
+   \   unsigned char volatile __sfr P2DIR
+   \                     P2DIR:
+   \   000000                DS 1
+      2          #include "UART.H" 
+      3          
+      4          // 串口初始化函数     
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+      5          void InitUart(void)
+   \                     InitUart:
+      6          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+      7           //   CLKCONCMD &= ~0x40;      // 设置系统时钟源为 32MHZ晶振
+      8           //   while(CLKCONSTA & 0x40); // 等待晶振稳定 
+      9           //   CLKCONCMD &= ~0x47;      // 设置系统主时钟频率为 32MHZ
+     10              
+     11              PERCFG = 0x00;           //位置1 P0口 
+   \   000000   75F100       MOV     0xf1,#0x0
+     12              P0SEL = 0x0c;            //P0_2,P0_3,P0_4,P0_5用作串口,第二功能 
+   \   000003   75F30C       MOV     0xf3,#0xc
+     13              P2DIR &= ~0xC0;          //P0 优先作为UART0 ，优先级
+   \   000006   53FF3F       ANL     0xff,#0x3f
+     14              
+     15              U0CSR |= 0x80;           //UART 方式 
+   \   000009   438680       ORL     0x86,#0x80
+     16              U0GCR |= 11;             //U0GCR与U0BAUD配合     
+   \   00000C   43C50B       ORL     0xc5,#0xb
+     17              U0BAUD |= 216;           // 波特率设为115200 
+   \   00000F   43C2D8       ORL     0xc2,#0xd8
+     18              UTX0IF = 0;              //UART0 TX 中断标志初始置位0 
+   \   000012   C2E9         CLR     0xe8.1
+     19              
+     20          }
+   \   000014   02....       LJMP    ?BRET
+   \   000017                REQUIRE PERCFG
+   \   000017                REQUIRE P0SEL
+   \   000017                REQUIRE P2DIR
+   \   000017                REQUIRE U0CSR
+   \   000017                REQUIRE U0GCR
+   \   000017                REQUIRE U0BAUD
+   \   000017                REQUIRE _A_IRCON2
+     21          
+     22          //串口发送函数    
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     23          void UartSendString(unsigned char *Data, int len) 
+   \                     UartSendString:
+     24          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+     25              int j; 
+     26              for(j=0;j<len;j++) 
+   \   000005   7800         MOV     R0,#0x0
+   \   000007   7900         MOV     R1,#0x0
+   \   000009   801A         SJMP    ??UartSendString_0
+     27              { 
+     28                  U0DBUF = *Data++; 
+   \                     ??UartSendString_1:
+   \   00000B   8A82         MOV     DPL,R2
+   \   00000D   8B83         MOV     DPH,R3
+   \   00000F   E0           MOVX    A,@DPTR
+   \   000010   F5C1         MOV     0xc1,A
+   \   000012   A3           INC     DPTR
+   \   000013   AA82         MOV     R2,DPL
+   \   000015   AB83         MOV     R3,DPH
+     29                  while(UTX0IF == 0); 
+   \                     ??UartSendString_2:
+   \   000017   A2E9         MOV     C,0xe8.1
+   \   000019   50FC         JNC     ??UartSendString_2
+     30                  UTX0IF = 0; 
+   \   00001B   C2E9         CLR     0xe8.1
+     31              }
+   \   00001D   E8           MOV     A,R0
+   \   00001E   2401         ADD     A,#0x1
+   \   000020   08           INC     R0
+   \   000021   E9           MOV     A,R1
+   \   000022   3400         ADDC    A,#0x0
+   \   000024   F9           MOV     R1,A
+   \                     ??UartSendString_0:
+   \   000025   C3           CLR     C
+   \   000026   E8           MOV     A,R0
+   \   000027   9C           SUBB    A,R4
+   \   000028   E9           MOV     A,R1
+   \   000029   9D           SUBB    A,R5
+   \   00002A   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   00002C   65D0         XRL     A,PSW
+   \   00002E   33           RLC     A
+   \   00002F   40DA         JC      ??UartSendString_1
+     32              U0DBUF = 0x0A;        
+   \   000031   75C10A       MOV     0xc1,#0xa
+     33              while(UTX0IF == 0);
+   \                     ??UartSendString_3:
+   \   000034   A2E9         MOV     C,0xe8.1
+   \   000036   50FC         JNC     ??UartSendString_3
+     34              UTX0IF = 0; 
+   \   000038   C2E9         CLR     0xe8.1
+     35              
+     36          }
+   \   00003A   7F01         MOV     R7,#0x1
+   \   00003C   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   00003F                REQUIRE U0DBUF
+   \   00003F                REQUIRE _A_IRCON2
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??InitUart?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    InitUart
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??UartSendString?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    UartSendString
+     37          /****************************************************
+     38          For example:
+     39          	unsigned char uchar_Test[10] = "abcdefghij"
+     40          	
+     41          	UartSendString(uchar_Test,10);
+     42          ****************************************************/
+
+   Maximum stack usage in bytes:
+
+   ISTACK PSTACK XSTACK Function
+   ------ ------ ------ --------
+       0      0      0  InitUart
+       0      0      9  UartSendString
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       6  ??InitUart?relay
+       6  ??UartSendString?relay
+      23  InitUart
+       1  P0SEL
+       1  P2DIR
+       1  PERCFG
+       1  U0BAUD
+       1  U0CSR
+       1  U0DBUF
+       1  U0GCR
+      63  UartSendString
+       1  _A_IRCON2
+
+ 
+ 86 bytes in segment BANKED_CODE
+ 12 bytes in segment BANK_RELAYS
+  8 bytes in segment SFR_AN
+ 
+ 98 bytes of CODE memory
+  0 bytes of DATA memory (+ 8 bytes shared)
+
+Errors: none
+Warnings: none

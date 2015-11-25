@@ -1,0 +1,60 @@
+[DebugChecksum]
+Checksum=1071759197
+[DisAssemblyWindow]
+NumStates=_ 1
+State 1=_ 1
+[InstructionProfiling]
+Enabled=_ 0
+[CodeCoverage]
+Enabled=_ 0
+[StackPlugin]
+Enabled=1
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnHow=0
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Breakpoints]
+Count=0
+[ChipconEmu]
+Stop timers on halt=0
+Leave target running=1
+[Aliases]
+A0=_ "D:\desk\cc2530\ch5\3 new task perfect ROOM1\ZStack-2.5.1a\Components\mt\MT_UART.c" ""
+A1=_ "D:\desk\cc2530\ch5\3 new task perfect ROOM1\ZStack-2.5.1a\Projects\zstack\ZMain\TI2530DB\ZMain.c" ""
+A2=_ "D:\desk\cc2530\ch5\3 new task perfect\ZStack-2.5.1a\Components\hal\target\CC2530EB\_hal_uart_dma.c" ""
+A3=_ "D:\desk\cc2530\ch5\3 new task perfect\ZStack-2.5.1a\Components\hal\target\CC2530EB\hal_dma.c" ""
+A4=_ "D:\desk\cc2530\ch5\3 new task perfect\ZStack-2.5.1a\Components\hal\target\CC2530EB\hal_key.c" ""
+A5=_ "D:\desk\cc2530\ch5\3 new task perfect\ZStack-2.5.1a\Components\hal\target\CC2530EB\hal_sleep.c" ""
+A6=_ "D:\desk\cc2530\ch5\3 new task perfect\ZStack-2.5.1a\Components\mac\low_level\srf04\single_chip\mac_mcu.c" ""
+A7=_ "D:\desk\cc2530\ch5\3 new task perfect\ZStack-2.5.1a\Components\mt\MT_UART.c" ""
+A8=_ "D:\desk\cc2530\ch5\3 new task perfect\ZStack-2.5.1a\Components\osal\common\OSAL.c" ""
+A9=_ "D:\desk\cc2530\ch5\3 new task perfect\ZStack-2.5.1a\Components\osal\mcu\cc2530\OSAL_Math.s51" ""
+A10=_ "D:\desk\cc2530\ch5\3 new task perfect\ZStack-2.5.1a\Components\zmac\f8w\zmac_cb.c" ""
+A11=_ "D:\desk\cc2530\ch5\3 new task perfect\ZStack-2.5.1a\Projects\zstack\ZMain\TI2530DB\ZMain.c" ""
+Count=12
+SuppressDialog=0
